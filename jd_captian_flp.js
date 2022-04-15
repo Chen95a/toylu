@@ -8,7 +8,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 let ownCode = null;
 let activityList = [
-    {'activityId' : '52c0712263f342308da1287a66702009' ,'activityShopId' : '1000003691' , 'activityName':'飞利浦' , 'updateCaptainNum' : '2'},,
+    {'activityId' : '52c0712263f342308da1287a66702009' ,'activityShopId' : '1000003691' , 'activityName':'飞利浦' , 'updateCaptainNum' : '2'},
 ]
 let activityNum = 0;
 if ($.isNode()) {
