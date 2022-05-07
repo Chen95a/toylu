@@ -106,6 +106,7 @@ async function member() {
             await $.wait(1000)
             await task('biouquan/activityContent', `activityId=${$.activityId}&pin=${encodeURIComponent($.secretPin)}&pinImg=&nick=${encodeURIComponent($.pin)}&cjyxPin=&cjhyPin=&shareUuid=${encodeURIComponent($.authorCode)}`, 0, 1)
             // $.log("关注店铺")
+            await $.wait(1000)
             await task('taskact/common/drawContent', `activityId=${$.activityId}&pin=${encodeURIComponent($.secretPin)}`)
             await task('common/getSystime', `activityId=${$.activityId}&actorUuid=${encodeURIComponent($.actorUuid)}`,1)
             await task('taskact/common/getDrawRecordHasCoupon', `activityId=${$.activityId}&actorUuid=${encodeURIComponent($.actorUuid)}&pin=${encodeURIComponent($.secretPin)}`)
@@ -120,6 +121,7 @@ async function member() {
             // }
             await getShopOpenCardInfo({ venderId: `${$.venderId}`, channel: "401" }, $.venderId);
             await bindWithVender({ venderId: `${$.venderId}`, bindByVerifyCodeFlag: 1, registerExtend: {}, writeChildFlag: 0, activityId: $.openCardActivityId, channel: 401 }, $.venderId);
+            await $.wait(1000)
             await task('taskact/common/drawContent', `activityId=${$.activityId}&pin=${encodeURIComponent($.secretPin)}`)
             await taskaccessLog("common/accessLogWithAD", `venderId=${$.activityShopId}&code=99&pin=${encodeURIComponent($.secretPin)}&activityId=${$.activityId}&pageUrl=${$.activityUrl}&subType=app&adSource=null`, 1);
             // await task('wxActionCommon/getUserInfo', `pin=${encodeURIComponent($.secretPin)}`, 1)
